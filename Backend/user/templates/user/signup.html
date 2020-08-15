@@ -1,0 +1,148 @@
+{% load static %} 
+{%load crispy_forms_tags %} 
+<html>
+  <head>
+    <title>SignUp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Josefin+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+  <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+  <link rel='stylesheet' id='ls-google-fonts-css' href='https://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900&amp;subset=latin%2Clatin-ext' type='text/css' media='all' />
+
+    <style>
+      .body-bg{
+        background-image: url({% static 'home/images/al-ghazali-Uyxkm0HJ93E-unsplash.jpg' %}) !important;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        padding: 7em 0px;
+      }
+      .main {
+        background-color: #FFFFFF;
+        width: 800px;
+        height: 100%;
+        margin: 0em auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        }
+        .sign {
+        padding-top: 40px;
+        color: rgb(47, 146, 187);
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 40px;
+        }
+        form.form1 {
+        padding-top: 40px;
+        }
+        .un {
+          width: 76%;
+          color: rgb(38, 50, 56);
+          font-weight: 700;
+          font-size: 14px;
+          letter-spacing: 1px;
+          background: rgba(136, 126, 126, 0.04);
+          padding: 10px 20px;
+          border: none;
+          border-radius: 20px;
+          outline: none;
+          box-sizing: border-box;
+          border: 2px solid rgba(0, 0, 0, 0.02);
+          margin-bottom: 50px;
+          margin-left: 46px;
+          text-align: center;
+          margin-bottom: 27px;
+          font-family: 'Montserrat';
+        }
+        .pass {
+          width: 76%;
+          color: rgb(38, 50, 56);
+          font-weight: 700;
+          font-size: 14px;
+          letter-spacing: 1px;
+          background: rgba(136, 126, 126, 0.04);
+          padding: 10px 20px;
+          border: none;
+          border-radius: 20px;
+          outline: none;
+          box-sizing: border-box;
+          border: 2px solid rgba(0, 0, 0, 0.02);
+          margin-bottom: 50px;
+          margin-left: 46px;
+          text-align: center;
+          margin-bottom: 27px;
+          font-family: 'Montserrat';
+        }
+        .submit {
+          cursor: pointer;
+            border-radius: 5em;
+            color: #fff;
+            background: linear-gradient(to right, rgb(0, 131, 187), rgb(47, 146, 187));
+            border: 0;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            font-family: 'Montserrat';
+            margin-left: 35%;
+            font-size: 13px;
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+        }
+
+        a {
+          font-weight: bold;
+          color: rgb(47, 146, 187);
+        }
+
+        a:hover {
+          color: black;
+        }
+
+        strong {
+          color: #ff1111;
+        }
+
+        .alert{
+          color: #ff1111 !important;
+        }
+    </style>
+    <style type="text/css">
+        @media(max-width: 725px){
+            .main{
+                width: 90%;
+            }
+            .login-form .form1{
+                padding-left: -100px;
+            }
+            .sign{
+                line-height: 1.6;
+            }
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="body-bg">
+      <div class="main">
+        <p class="sign" style="padding-top: 70px;" align="center">Sign Up</p>
+        <div class="" style="margin-left: 10%; margin-right: 10%; font-family: 'Montserrat';" >
+          <form class="form1" id="login-form" method="post" action="" ">
+            {% csrf_token %} 
+            {{ form|crispy}}
+            <input style="background-color: rgb(47, 146, 187)" type="submit" value="Sign up" class="btn btn-primary pull-right" />
+          </form>
+
+            <div class="border-top pt-4" style="font-size: 20px; padding-bottom: 50px; padding-top: 80px; text-align: center;">
+                <small class="text-muted">
+                    Already Have An Account?<a class="ml-2" href="{% url 'login' %}"> Login Now </a>
+                </small>
+            </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
