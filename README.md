@@ -1,2 +1,1 @@
-Sanaul
-Vanshika
+Team 69
