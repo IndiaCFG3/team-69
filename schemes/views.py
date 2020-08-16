@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Schemes
+from members.models import Member
 
 # NOTE
 # Age, Location, Gender, Income, Number of people in family, Only Child Policy, 
@@ -46,3 +47,10 @@ def searchResultsView(request):
         "object_list" : object_list
     }
     return render(request, template_name, values)
+
+def appliedSchemes(request):
+    context = {
+        'scheme': Schemes.objects.filter(applied_schemes=request.user.member),
+    }
+    return render(request, 'main/scheme.html', context)
+
