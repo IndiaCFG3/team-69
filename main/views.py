@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from schemes.models import Schemes
 # Create your views here.
 
 
@@ -9,7 +10,11 @@ def index(request):
 
 
 def home(request):
-    return render(request, 'main/home.html')
+    schemes = Schemes.objects.all()
+    context = {
+        schemes: schemes
+    }
+    return render(request, 'main/home.html', context)
 
 
 def dashboard(request):
