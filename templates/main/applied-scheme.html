@@ -7,7 +7,7 @@
 	<link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Schemes</title>
+	<title>Applied Schemes</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
@@ -60,33 +60,37 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
-					<h1 class="title">Filter the Schemes!</h1>
+					<h1 class="title">Applied Schemes!</h1>
 					<br />
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="main main-raised">
-		<div class="container">
-			<div class="section section-text">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-                        <h3 class="title text-center">Users</h3>
-                        <div class="card" style="width: 20rem;">
-                            <div class="card-body">
-                              <h4 class="card-title">Scheme Name</h4>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text">Scheme Details</p>
-                              <a href="javascript:;" class="card-link">Card link</a>
-                            </div>
-                          </div>
+	{% if scheme %}
+		{% for sc in scheme %}
+		<div class="main main-raised">
+			<div class="container">
+				<div class="section section-text">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+	                        <h3 class="title text-center">Users</h3>
+	                        <div class="card" style="width: 20rem;">
+	                            <div class="card-body">
+	                              <h4 class="card-title">{{sh.name}}</h4>
+	                              <h6 class="card-subtitle mb-2 text-muted">{{sh.income}}</h6>
+	                              <p class="card-text">{{sh.age}}</p>
+	                              <p class="card-text">{{sh.gender}}</p>
+	                              <a href="javascript:;" class="card-link">{{sh.scheme_url}}k</a>
+	                            </div>
+	                          </div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
+		{% endfor %}
+	{% endif %}
 	<footer class="footer">
 		<div class="container">
 			<nav class="pull-left">

@@ -14,6 +14,10 @@ def contact(request):
     return render(request, 'main/contact.html', context)
 
 
+def user_view(request):
+    return render(request, 'main/user_view.html')
+
+
 def home(request):
     schemes = Schemes.objects.all()
     context = {
@@ -30,3 +34,4 @@ def dashboard(request):
         #     volunteer=request.user.volunteer).all()
         # print(volunteer_member)
         return render(request, 'user/vol_dashboard.html')
+

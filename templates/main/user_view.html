@@ -67,25 +67,32 @@
 		</div>
 	</div>
 
-	<div class="main main-raised">
-		<div class="container">
-			<div class="section section-text">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-                        <h3 class="title text-center">Users</h3>
-                        <div class="card" style="width: 20rem;">
-                            <div class="card-body">
-                              <h4 class="card-title">Scheme Name</h4>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text">Scheme Details</p>
-                              <a href="javascript:;" class="card-link">Card link</a>
-                            </div>
-                          </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="main main-raised">
+        <div class="container">
+            <div class="row tim-row">
+                <h2 class="text-center">User Details</h2>
+                <legend></legend>
+                <!-- Add user details here -->
+                <h4 class="text-center">
+                    {{user.member.name}}
+                </h4>
+                <h4 class="text-center">
+                    {{user.email}}
+                </h4>
+                <h4 class="text-center">
+                    {{user.member.dob}}
+                </h4>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">Verified All Documents
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<footer class="footer">
 		<div class="container">
