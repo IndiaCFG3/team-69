@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'main',
     'user.apps.UserConfig',
     'phonenumber_field',
+    'members.apps.MembersConfig',
+    'schemes',
+    'volunteers'
 ]
 
 MIDDLEWARE = [
@@ -131,7 +134,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# User Login and Authentication 
+# User Login and Authentication
 AUTH_USER_MODEL = "user.User"
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
