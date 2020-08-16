@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8" />
 	<link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/apple-icon.png' %}">
@@ -13,31 +14,32 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
 	<!--     Fonts and icons     -->
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+	<link rel="stylesheet" type="text/css"
+		href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
 	<!-- CSS Files -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
-    <link href="{% static 'css/material-kit.css' %}" rel="stylesheet"/>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'css/material-kit.css' %}" rel="stylesheet" />
 </head>
 
 <body class="signup-page">
 	<nav class="navbar navbar-primary navbar-transparent navbar-absolute">
-    	<div class="container">
-        	<!-- Brand and toggle get grouped for better mobile display -->
-        	<div class="navbar-header">
-        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
-            		<span class="sr-only">Toggle navigation</span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-        		</button>
-        		<a class="navbar-brand" href="#">Panah Foundation</a>
-        	</div>
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Panah Foundation</a>
+			</div>
 
-        	<div class="collapse navbar-collapse" id="navigation-example">
-        		<ul class="nav navbar-nav navbar-right">
-    				<li>
+			<div class="collapse navbar-collapse" id="navigation-example">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
 						<a href="#">
 							<i class="material-icons">home</i> Home
 						</a>
@@ -52,25 +54,25 @@
 							<i class="material-icons">call</i> Contact
 						</a>
 					</li>
-        		</ul>
-        	</div>
-    	</div>
-    </nav>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 
-	<div class="page-header header-filter" filter-color="purple" style="background-image: url({% static 'img/bg7.jpg' %}); background-size: cover; background-position: top center;">
-    	<div class="container">
+	<div class="page-header header-filter" filter-color="purple"
+		style="background-image: url({% static 'img/bg7.jpg' %}); background-size: cover; background-position: top center;">
+		<div class="container">
 			<div class="row">
-    			<div class="col-md-10 col-md-offset-1">
-
+				<div class="col-md-12">
 					<div class="card card-signup">
-                        <h2 class="card-title text-center">SIGN - UP</h2>
-                        <div class="row">
-                        	<form class="form" method="POST" action="">
+						<h2 class="card-title text-center">SIGN - UP</h2>
+						<div class="row">
+							{% load widget_tweaks %}
+							<form class="form" class="col-md-8 text-center" method="POST" action="">
 								{% csrf_token %}
-								{{form|crispy}}
-								
-                            <!-- <div class="col-md-5 col-md-offset-1">
+								{{ form|crispy }}
+								<!-- <div class="col-md-5 col-md-offset-1">
 									<div class="content">
 										<div class="input-group">
 											<span class="input-group-addon">
@@ -115,20 +117,21 @@
 									<a href="#pablo" class="btn btn-primary btn-round">Get Started</a>
 								</div>
 							</div>
- -->							<div class="footer text-center">
+ -->
+								<div class="footer text-center">
 									<input type="submit" value="Get Started" class="btn btn-primary btn-round" />
 								</div>
-						</form>
-                        </div>
-                	</div>
+							</form>
+						</div>
+					</div>
 
-                </div>
-            </div>
+				</div>
+			</div>
 		</div>
 
 		<footer class="footer">
-	        <div class="container">
-	            <nav class="pull-left">
+			<div class="container">
+				<nav class="pull-left">
 					<ul>
 						<li>
 							<a href="http://www.creative-tim.com">
@@ -137,12 +140,12 @@
 						</li>
 						<li>
 							<a href="http://presentation.creative-tim.com">
-							   About Us
+								About Us
 							</a>
 						</li>
 						<li>
 							<a href="http://blog.creative-tim.com">
-							   Blog
+								Blog
 							</a>
 						</li>
 						<li>
@@ -151,41 +154,44 @@
 							</a>
 						</li>
 					</ul>
-	            </nav>
-	            <div class="copyright pull-right">
-	                &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com" target="_blank">Creative Tim</a>
-	            </div>
-	        </div>
-	    </footer>
+				</nav>
+				<div class="copyright pull-right">
+					&copy;
+					<script>document.write(new Date().getFullYear())</script>, made with <i
+						class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com" target="_blank">Creative
+						Tim</a>
+				</div>
+			</div>
+		</footer>
 
-    </div>
+	</div>
 
 
 </body>
-	<!--   Core JS Files   -->
-	<script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
-	<script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
-	<script src="{% static 'js/material.min.js' %}"></script>
+<!--   Core JS Files   -->
+<script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/material.min.js' %}"></script>
 
-	<!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-	<script src="{% static 'js/nouislider.min.js' %}" type="text/javascript"></script>
+<!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="{% static 'js/nouislider.min.js' %}" type="text/javascript"></script>
 
-	<!--	Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
-	<script src="{% static 'js/bootstrap-datepicker.js' %}" type="text/javascript"></script>
+<!--	Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
+<script src="{% static 'js/bootstrap-datepicker.js' %}" type="text/javascript"></script>
 
-	<!--	Plugin for Select Form control, full documentation here: https://github.com/FezVrasta/dropdown.js -->
-	<script src="{% static 'js/jquery.dropdown.js' %}" type="text/javascript"></script>
+<!--	Plugin for Select Form control, full documentation here: https://github.com/FezVrasta/dropdown.js -->
+<script src="{% static 'js/jquery.dropdown.js' %}" type="text/javascript"></script>
 
-	<!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/  -->
-	<script src="{% static 'js/jquery.tagsinput.js' %}"></script>
+<!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/  -->
+<script src="{% static 'js/jquery.tagsinput.js' %}"></script>
 
-	<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-	<script src="{% static 'js/jasny-bootstrap.min.js' %}"></script>
+<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+<script src="{% static 'js/jasny-bootstrap.min.js' %}"></script>
 
-	<!-- Plugin For Google Maps -->
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<!-- Plugin For Google Maps -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
-	<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
-	<script src="{% static 'js/material-kit.js' %}" type="text/javascript"></script>
+<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
+<script src="{% static 'js/material-kit.js' %}" type="text/javascript"></script>
 
 </html>
