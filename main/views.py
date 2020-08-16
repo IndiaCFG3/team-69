@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from schemes.models import Schemes
 from volunteers.models import VolunteerMember
-from member.models import Member
+from members.models import Member
 
 
 def index(request):
