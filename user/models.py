@@ -16,7 +16,8 @@ class User(AbstractUser):
     username = None
     email = models.EmailField(verbose_name='Email Address', unique=True)
     contact = PhoneNumberField(blank=False)
-    
+    role = models.CharField(max_length=15, default="member")
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
@@ -24,4 +25,3 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.email
-    
