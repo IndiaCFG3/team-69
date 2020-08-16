@@ -7,9 +7,14 @@ class Member(models.Model):
     name = models.CharField(max_length=20)
     age = models.PositiveIntegerField(validators=[MaxValueValidator(100)])
     dob = models.DateField()
-    income = models.IntegerField()
-    family_size = models.IntegerField()
-    gender = models.CharField(max_length=7)
+    income = models.PositiveIntegerField()
+    family_size = models.PositiveIntegerField()
+    GENDER = [
+    	('MALE', 'Male'),
+    	('FEMALE', 'Female'),
+    	('WOULD NOT LIKE TO DISCLOSE', 'Would Not Like TO Disclose'),
+    ]
+    gender = models.CharField(choices=GENDER, default='WOULD NOT LIKE TO DISCLOSE', max_length=30)
     location = models.CharField(max_length=120)
-    user = models.ForeignKey(
+    user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="member")
