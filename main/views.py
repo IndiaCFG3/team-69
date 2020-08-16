@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from schemes.models import Schemes
 from volunteers.models import VolunteerMember
+from member.models import Member
 
 def index(request):
     context = {
@@ -29,8 +30,11 @@ def dashboard(request):
         # volunteer_member = VolunteerMember.objects.filter(
         #     volunteer=request.user.volunteer).all()
         # print(volunteer_member)
-<<<<<<< HEAD
-        return render(request, 'user/dashboard.html')
-=======
         return render(request, 'user/vol_dashboard.html')
->>>>>>> 6b2d3c9040c8cf05b3801be96245d18782c9ff5c
+
+def appliedSchemes(request):
+    context = {
+        scheme: Schemes.objects.filter(applied_schemes=request.user.member),
+    }
+    return render(request, '')
+
