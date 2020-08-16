@@ -6,7 +6,7 @@ from user.models import User
 class Member(models.Model):
     name = models.CharField(max_length=20)
     age = models.PositiveIntegerField(validators=[MaxValueValidator(100)])
-    dob = models.DateField()
+    dob = models.DateField(verbose_name='Date Of Birth')
     income = models.PositiveIntegerField()
     family_size = models.PositiveIntegerField()
     GENDER = [

@@ -18,7 +18,7 @@ def register(request):
             Member.objects.create(  user = user, 
                                     age  = form.cleaned_data.get('age'),
                                     name = form.cleaned_data.get('name'),
-                                    dob  = form.cleaned_data.get('dob'),
+                                    dob  = form.cleaned_data.get('date_of_birth'),
                                     income = form.cleaned_data.get('income'),
                                     family_size = form.cleaned_data.get('family_size'),
                                     location = form.cleaned_data.get('location'),

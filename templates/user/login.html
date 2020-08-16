@@ -33,6 +33,25 @@
     <!-- CSS Files -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="{% static 'css/material-kit.css' %}" rel="stylesheet" />
+    <style>
+      .form-control{
+        width: 80%;
+        margin: 0 auto;
+      }
+      label{
+        max-width: 80%;
+      margin-left: 10%;
+      }
+      small{
+        margin-left: 10%;
+        max-width: 80%;
+      }
+      ol, ul{
+        margin-left: 7%;
+        max-width: 80%;
+      }
+    </style>
+
   </head>
 
   <body class="login-page">
@@ -63,52 +82,9 @@
             <div class="card card-signup">
               <form class="form" method="POST" action="">
 
-                {% load widget_tweaks %}
                 <h4 style="text-align: center; font-size: 30px; font-weight: 400;"> LOG IN </h4>
                 {% csrf_token %}
                 {{form|crispy}}
-<!--  
-                <div class="content">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <i class="material-icons">face</i>
-                    </span>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Name..."
-                    />
-                  </div>
-
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <i class="material-icons">email</i>
-                    </span>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Email..."
-                    />
-                  </div>
-
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <i class="material-icons">lock_outline</i>
-                    </span>
-                    <input
-                      type="password"
-                      placeholder="Password..."
-                      class="form-control"
-                    />
-                  </div>
-                </div>
-                <div class="footer text-center">
-                  <a
-                    href="#pablo"
-                    class="btn btn-primary btn-simple btn-wd btn-lg"
-                    >Get Started</a
-                  >
-                </div> -->
                   <input
                     type="submit" value="Login"
                     class="btn btn-primary btn-simple btn-wd btn-lg"
