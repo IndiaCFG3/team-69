@@ -8,14 +8,14 @@ class UserRegisterForm(UserCreationForm):
 	email 		= forms.EmailField()
 	name 		= forms.CharField(max_length=20)
 	age 		= forms.IntegerField(min_value=0)
-	dob			= forms.DateField()
+	date_of_birth = forms.DateField(help_text='YYYY-MM-DD Format')
 	income		= forms.IntegerField(min_value=0)
 	family_size = forms.IntegerField(min_value=1)
 	location 	= forms.CharField(max_length=120)
 
 	class Meta(UserCreationForm.Meta):
 		model 	= User
-		fields 	= ['name', 'email', 'age', 'dob', 'income', 'family_size', 'location', 'contact', 'password1', 'password2']
+		fields 	= ['name', 'email', 'age', 'date_of_birth', 'income', 'family_size', 'location', 'contact', 'password1', 'password2']
 	
 	@transaction.atomic
 	def clean(self):

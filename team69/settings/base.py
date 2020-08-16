@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     'schemes.apps.SchemesConfig',
     'volunteers.apps.VolunteersConfig',
     'broadcast',
-    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
