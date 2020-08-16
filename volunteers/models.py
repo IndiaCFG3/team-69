@@ -1,3 +1,4 @@
+from django.core.validators import MaxValueValidator
 from django.db import models
 from members.models import Member
 from user.models import User
@@ -5,7 +6,7 @@ from user.models import User
 
 class Volunteer(models.Model):
     name = models.CharField(max_length=20)
-    age = models.IntegerField()
+    age = models.PositiveIntegerField(validators=[MaxValueValidator(100)])
     gender = models.CharField(max_length=7)
     location = models.CharField(max_length=120)
     user = models.ForeignKey(

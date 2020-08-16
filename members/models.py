@@ -1,10 +1,11 @@
+from django.core.validators import MaxValueValidator
 from django.db import models
 from user.models import User
 
 
 class Member(models.Model):
     name = models.CharField(max_length=20)
-    age = models.IntegerField()
+    age = models.PositiveIntegerField(validators=[MaxValueValidator(100)])
     dob = models.DateField()
     income = models.IntegerField()
     family_size = models.IntegerField()
