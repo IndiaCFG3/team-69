@@ -30,7 +30,12 @@ SECRET_KEY = config('BASE_SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+TWILIO_ACCOUNT_SID = config("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN")
+TWILIO_NUMBER = config("TWILIO_NUMBER")
+SMS_BROADCAST_TO_NUMBERS = [ 
+    "+91xxxxxxxxxx", # use the format +19735551234
+]
 
 # Application definition
 
@@ -47,7 +52,8 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'members.apps.MembersConfig',
     'schemes.apps.SchemesConfig',
-    'volunteers.apps.VolunteersConfig'
+    'volunteers.apps.VolunteersConfig',
+    'broadcast',
 ]
 
 MIDDLEWARE = [
