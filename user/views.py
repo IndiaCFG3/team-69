@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.views.generic import CreateView
 from .forms import UserRegisterForm, UserUpdateForm
 from .models import User
-from members.models import Member
+from members.models import Member, Document
 
 def register(request):
     if request.method == 'POST':
@@ -16,7 +16,7 @@ def register(request):
             user.role = "end_user"
             user.email = form.cleaned_data.get('email')
             user.save()
-            Member.objects.create(  user = user, 
+            member = Member.objects.create(  user = user, 
                                     age  = form.cleaned_data.get('age'),
                                     name = form.cleaned_data.get('name'),
                                     dob  = form.cleaned_data.get('date_of_birth'),
@@ -24,6 +24,7 @@ def register(request):
                                     family_size = form.cleaned_data.get('family_size'),
                                     location = form.cleaned_data.get('location'),
                                 )
+            Document.objects.create(member=member)
             
             messages.success(request, f'Your account has been created! You can login now.')
             return redirect('/broadcast?id=28')

@@ -21,3 +21,15 @@ class Member(models.Model):
 
     def __str__(self):
         return self.user.email
+
+class Document(models.Model):
+    member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='document')
+    aadhar_card = models.BooleanField(default=False)
+    driving_license = models.BooleanField(default=False)
+    voter_id = models.BooleanField(default=False)
+    birth_certificate = models.BooleanField(default=False)
+    pan_card = models.BooleanField(default=False)
+    ration_card = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.member.user.email + '1'

@@ -19,4 +19,4 @@ class VolunteerMember(models.Model):
     volunteer = models.ForeignKey(
         Volunteer, on_delete=models.CASCADE, related_name="volunteer")
     member = models.ForeignKey(
-        Member, on_delete=models.CASCADE, related_name="member")
+        Member, on_delete=models.CASCADE, related_name="enduser")
