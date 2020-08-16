@@ -8,6 +8,10 @@ def index(request):
     }
     return render(request, 'main/index.html', context)
 
+def contact(request):
+    context = {
+    }
+    return render(request, 'main/contact.html', context)
 
 def home(request):
     schemes = Schemes.objects.all()
