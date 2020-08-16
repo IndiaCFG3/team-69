@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('user.urls')),
     path('', include('main.urls')),
     path('translate/', views.index),
-    path('', include('broadcast.urls'))
+    path('', include('broadcast.urls')),
+    path('', include('schemes.urls'))
 ]
