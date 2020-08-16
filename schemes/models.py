@@ -33,3 +33,4 @@ class Schemes(models.Model):
     disability = models.BooleanField()
     msme = models.BooleanField()
     daily_wage_workers = models.BooleanField()
+    scheme_url = models.URLField(null=True, blank=True)
