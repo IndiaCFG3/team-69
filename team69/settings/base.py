@@ -34,8 +34,8 @@ ALLOWED_HOSTS = []
 TWILIO_ACCOUNT_SID = config("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN")
 TWILIO_NUMBER = config("TWILIO_NUMBER")
-SMS_BROADCAST_TO_NUMBERS = [ 
-    "+91xxxxxxxxxx", # use the format +19735551234
+SMS_BROADCAST_TO_NUMBERS = [
+    "+91xxxxxxxxxx",  # use the format +19735551234
 ]
 
 # Application definition
@@ -142,7 +142,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # User Login and Authentication
 AUTH_USER_MODEL = "user.User"
@@ -151,7 +151,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 LOGIN_URL = 'login'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'dashboard'
 
 # Django-Crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
