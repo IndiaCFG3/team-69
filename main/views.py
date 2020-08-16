@@ -36,5 +36,5 @@ def appliedSchemes(request):
     context = {
         scheme: Schemes.objects.filter(applied_schemes=request.user.member),
     }
-    return render(request, '')
+    return render(request, 'main/scheme.html', scheme)
 
