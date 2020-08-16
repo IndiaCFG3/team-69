@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'phonenumber_field',
     'members.apps.MembersConfig',
+    'schemes',
+    'volunteers'
 ]
 
 MIDDLEWARE = [
