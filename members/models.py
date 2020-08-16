@@ -16,7 +16,7 @@ class Member(models.Model):
     ]
     gender = models.CharField(choices=GENDER, default='WOULD NOT LIKE TO DISCLOSE', max_length=30)
     location = models.CharField(max_length=120)
-    schemes = models.ManyToManyField(Schemes, default=None)
+    schemes = models.ManyToManyField(Schemes, default=None, related_name='applied_schemes')
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="member")
 
     def __str__(self):

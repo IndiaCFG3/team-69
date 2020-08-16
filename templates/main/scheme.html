@@ -72,39 +72,20 @@
 			<div class="section section-text">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
-						<h3 class="title">Find the Perfect Scheme for you!</h3>
-						<form class="form" method="GET" action="schemes/search">
-							<!--h4 style="text-align: center; font-size: 30px; font-weight: 400;"> LOG IN </h4-->
-							
-							  <input type="text" name="result"  />
-							  <input type="submit" class="btn btn-primary btn-simple btn-wd btn-lg" />
-						  </form>
-						<table class="">
-							<thead>
-							</thead>
-							<tbody>
-								{% for obj in object_list %}
-								<tr>
-									<td>{{obj.id}}</td>
-									<td>{{obj.name}}</td>
-									<td>{{obj.income}}</td>
-									<td>{{obj.family_size}}</td>
-									<td>{{obj.only_child}}</td>
-									<td>{{obj.only_girl_child}}</td>
-									<td>{{obj.refugee}}</td>
-									<td>{{obj.caste}}</td>
-									<td>{{obj.military_experience}}</td>
-									<td>{{obj.scheme_url}}</td>
-								</tr>
-								{% endfor %}
-							</tbody>
-						</table>
+                        <h3 class="title text-center">Users</h3>
+                        <div class="card" style="width: 20rem;">
+                            <div class="card-body">
+                              <h4 class="card-title">Scheme Name</h4>
+                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                              <p class="card-text">Scheme Details</p>
+                              <a href="javascript:;" class="card-link">Card link</a>
+                            </div>
+                          </div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 	<footer class="footer">
 		<div class="container">
