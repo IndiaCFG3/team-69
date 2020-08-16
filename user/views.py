@@ -18,7 +18,7 @@ def register(request):
             return redirect('login')
     else:
         form = UserRegisterForm()
-    return render(request, 'user/signup.html', {'form': form})
+    return render(request, 'user/user_signup.html', {'form': form})
 
 @login_required
 def profileview(request):
