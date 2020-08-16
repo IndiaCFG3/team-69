@@ -1,0 +1,420 @@
+// style for the profile page
+
+.profile-page{
+    .page-header{
+        height: 380px;
+        background-position: top center;
+    }
+    .profile{
+        text-align: center;
+
+        img{
+            max-width: 160px;
+            width: 100%;
+            margin: 0 auto;
+            display:inline-block;
+            @include transform-translate-y(-50%);
+        }
+        .name{
+            margin-top: -80px;
+        }
+        .badge{
+                position: absolute;
+                top: 35px;
+                margin-left: -45px;
+        }
+    }
+    .description{
+        margin: $margin-base auto 0;
+        max-width: 600px;
+    }
+    .profile-tabs{
+        margin-top: $margin-base * 4;
+    }
+    .gallery{
+        margin-top: $margin-base * 3;
+        padding-bottom: 50px;
+
+        img{
+            width: 100%;
+            margin-bottom: $margin-base * 2;
+        }
+    }
+    .follow{
+        .btn-fab{
+            margin-top: -28px;
+        }
+    }
+    .card-background{
+        .content{
+            padding: 30% 0;
+            min-width: 160px;
+        }
+    }
+    .work{
+        padding: 40px 0px;
+        .collections{
+            margin-top: 20px;
+        }
+
+        .stats{
+            ul > li{
+                padding: 5px 0px;
+                font-size: 1em;
+                b{
+                    font-size: 1.2em;
+                }
+
+            }
+        }
+    }
+
+    .connections{
+        padding: 40px 0px;
+        .card-profile{
+            text-align: left;
+        }
+    }
+}
+
+.blog-post{
+    .section-text{
+        padding-bottom: 0;
+
+        p{
+            font-size: 1.35em;
+            line-height: 1.5em;
+            color: $gray;
+            margin-bottom: 30px;
+        }
+    }
+
+    .section-blog-info{
+        padding-top: 30px;
+        padding-bottom: 0px;
+
+        .btn{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .blog-tags{
+            padding-top: 8px;
+        }
+        .card-profile{
+            margin-top: 0;
+            text-align: left;
+
+            .description{
+                font-size: $font-size-base;
+            }
+            .btn{
+                margin-top: 25px;
+            }
+        }
+    }
+    .section-comments{
+        .title{
+            margin-bottom: 30px;
+        }
+    }
+
+    .media{
+        p{
+            color: $gray;
+        }
+    }
+}
+
+.blog-posts{
+
+}
+
+.login-page{
+    .page-header{
+        min-height: 100vh;
+        height: auto;
+
+        .container{
+            padding-top: 20vh;
+        }
+    }
+
+    .footer{
+        .container{
+            padding: 0;
+        }
+        .copyright,
+        a{
+            color: #FFFFFF;
+        }
+    }
+}
+.signup-page{
+    .page-header{
+        min-height: 100vh;
+        height: auto;
+
+        .container{
+            padding-top: 20vh;
+        }
+    }
+
+    .card-signup{
+        border-radius: $border-radius-base * 2;
+        @include shadow-16dp();
+        margin-bottom: 100px;
+        padding: 40px 0px;
+    }
+    .info-horizontal{
+        padding: 0px 0px 20px;
+    }
+    .social{
+        .btn{
+            margin: 5px;
+        }
+        h4{
+            margin-top: 20px;
+        }
+    }
+    .footer{
+        .container{
+            padding: 0;
+        }
+        .copyright,
+        a{
+            color: #FFFFFF;
+        }
+    }
+
+}
+.landing-page,
+.profile-page,
+.login-page,
+.index-page,
+.signup-page,
+.presentation-page{
+    .navbar-transparent{
+        padding-top: 25px;
+    }
+}
+
+.contact-page{
+    .contact-content{
+        padding-bottom: 40px;
+        padding-top: 40px;
+    }
+    .container{
+        max-width: 970px;
+    }
+    .big-map{
+        height: 55vh;
+        width: 100%;
+        display: block;
+        position: relative;
+    }
+    .message{
+        margin-top: 20px;
+    }
+    .info{
+        padding-bottom: 10px;
+        padding-top: 0px;
+        .title{
+            margin: 25px 0 10px;
+        }
+    }
+}
+
+.product-page{
+    background-color: #eee;
+
+    .page-header{
+        height: 60vh;
+        background-position: top center;
+
+        .container{
+            padding-top: 18vh;
+        }
+    }
+    .main-raised{
+        margin: -40vh 0px 0px;
+        padding: 40px;
+    }
+
+   .title-row{
+        margin-top: 20px;
+    }
+   .tab-content{
+        margin: 30px 0px;
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        text-align: center;
+
+        img {
+          border-radius: $border-radius-base;
+          max-width: 300px;
+          height: auto;
+        }
+    }
+    .main-price{
+      margin: 10px 0 25px;
+    }
+    .pick-size{
+      margin-top: 50px;
+      .form-group{
+          margin-top: 5px;
+      }
+    }
+    h2.title{
+      margin-bottom: 0px;
+    }
+    .flexi-nav {
+        margin: 20px 0 30px;
+        text-align: center;
+
+        > li{
+            a{
+                width: 80%;
+                max-width: 85px;
+                margin: 0 auto;
+                padding: 8px;
+                border: 1px solid transparent;
+                background: transparent;
+                border-radius: $border-radius-base;
+                opacity: .8;
+                @extend .animation-transition-fast;
+
+                &:hover,
+                &:focus,
+                &:active{
+                    opacity: 1;
+                    border-color: #DDDDDD;
+                }
+
+                img {
+                    border-radius:  $border-radius-base;
+                    width: 100%;
+                    height: auto;
+                    text-align: center;
+                }
+            }
+
+            &.active a {
+                opacity: 1;
+                border-color: #DDDDDD;
+            }
+        }
+    }
+    .related-products{
+        margin-top: 50px;
+
+        .title{
+            margin-bottom: 80px;
+        }
+    }
+    .features{
+      padding-top: 30px;
+    }
+}
+
+.pricing{
+    .page-header{
+        height: 60vh;
+
+        .container{
+            padding-top: 20vh;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        .title{
+            color: $white-color;
+        }
+    }
+    .features-2{
+        padding-top: 20px;
+        .info{
+            padding-top: 50px;
+        }
+    }
+}
+
+.about-us{
+    .page-header{
+        background-size: cover;
+        height: 60vh;
+
+        .container{
+            padding-top: 20vh;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        .title{
+            color: $white-color;
+        }
+    }
+    .about-description{
+        padding: 70px 0px 0px 0px;
+    }
+    .about-services{
+        padding-top: 10px;
+    }
+    .about-office{
+        .description{
+            margin-bottom: 70px;
+        }
+        img{
+            margin: 20px 0px;
+        }
+    }
+
+    .about-contact{
+        padding: 80px 0px;
+        .description{
+            margin-bottom: 70px;
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .footer{
+        .copyright{
+            display: inline-block;
+            text-align: center;
+            padding: 10px 0;
+            float: none !important;
+            width: 100%;
+
+        }
+    }
+    .navbar.navbar-transparent{
+        padding-top: 10px;
+        border-radius: 0;
+    }
+
+    .main-raised{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+
+@-webkit-keyframes go-down {
+	0% {
+		-webkit-transform:translateY(0);
+		transform:translateY(0)
+	}
+	to {
+		-webkit-transform:translateY(20px);
+		transform:translateY(20px)
+	}
+}
+@keyframes go-down {
+	0% {
+		-webkit-transform:translateY(0);
+		transform:translateY(0)
+	}
+	to {
+		-webkit-transform:translateY(20px);
+		transform:translateY(20px)
+	}
+}

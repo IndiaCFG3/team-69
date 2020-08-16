@@ -1,0 +1,347 @@
+// general style for example pages
+.gallery{
+    .image{
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.team{
+    margin-top: 80px;
+
+    .team-player{
+        .title{
+            margin: $margin-base * 2 auto;
+        }
+        img{
+            max-width: 170px;
+        }
+    }
+}
+
+.presentation-page,
+.index-page{
+   
+    .brand{ .page-header{
+        height: 100vh;
+        overflow: hidden;
+    }
+        color: #FFFFFF;
+        text-align: center;
+
+        h1{
+            font-size: 4.8em;
+            font-weight: 600;
+            display: inline-block;
+            position: relative;
+        }
+        h3{
+            font-size: 1.5em;
+            max-width: 490px;
+            margin: 10px auto 0;
+        }
+    }
+    .pro-badge{
+        position: absolute;
+        font-size: 22px;
+        text-transform: uppercase;
+        font-weight: bold;
+        right: -90px;
+        padding: 10px 18px;
+        top: -3px;
+        background: #FFFFFF;
+        border-radius: 3px;
+        color: #444444;
+        line-height: 22px;
+        box-shadow: 0 5px 5px -2px rgba(31, 31, 31, 0.4);
+    }
+    .header-filter:after{
+        background: rgba(132, 13, 121, 0.88);
+        background: linear-gradient(45deg,  rgba(132, 13, 121, 0.88) 0%, rgba(208, 44, 180, 0.31) 100%);
+        background: -moz-linear-gradient(135deg,  rgba(132, 13, 121, 0.88) 0%, rgba(208, 44, 180, 0.31) 100%);
+        background: -webkit-linear-gradient(135deg,  rgba(132, 13, 121, 0.88) 0%, rgba(208, 44, 180, 0.31) 100%);
+
+    }
+    .navbar.navbar-transparent{
+        //background: none;
+    }
+    .navbar-primary{
+        background: linear-gradient(86deg, #9C27B0, #962E81);
+    }
+    h4.description{
+        font-size: 1.5em;
+    }
+    .features-1{
+        padding-top: 30px;
+        padding-bottom: 0;
+
+        .info .info-title{
+            margin-top: 30px;
+        }
+        h2{
+            margin-bottom: 0px;
+        }
+
+        .info p{
+            font-size: 16px;
+            line-height: 1.6em;
+        }
+    }
+
+    .section-components{
+        padding: 0 0 50px;
+        overflow: hidden;
+
+        .image-container{
+            height: 590px;
+            position: relative;
+
+            img{
+                width: auto;
+                left: 0;
+                top:0 ;
+                height: 100%;
+                position: absolute;
+            }
+        }
+        .title{
+            margin-top: 140px;
+            margin-bottom: 5px;
+        }
+        h6.description{
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .section-cards{
+        padding: 50px 0;
+        // overflow: hidden;
+
+        .image-container{
+            max-width: 1040px;
+            margin-top: -140px;
+            position: relative;
+            height: 660px;
+
+            img{
+                max-width: 1040px;
+
+                width: auto;
+                position: absolute;
+                right: 0;
+                top: 0px;
+            }
+        }
+        .col-md-4{
+            perspective: 800px;
+        }
+        .card{
+            transform-style: preserve-3d;
+            max-width: 340px;
+            margin: 0 auto;
+            //transform: scale(.76);
+
+            @extend .animation-transition-fast;
+        }
+
+        .section-description{
+            margin-top: 130px;
+        }
+
+    }
+
+    .section-content{
+        padding-top: 200px;
+
+        .image-container{
+            max-width: 900px;
+            position: relative;
+
+            // animation: 'go-down' 5s ease-in-out infinite alternate;
+            // -webkit-animation: 'go-down' 5s ease-in-out infinite alternate;
+            img{
+                width: 100%;
+            }
+        }
+
+        .section-description{
+            margin-top: 100px;
+        }
+    }
+
+    .section-sections{
+
+        padding-bottom: 0;
+        margin-bottom: -35px;
+
+        .row{
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+        .section-description{
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .col-md-3{
+            padding: 7.5px;
+        }
+
+        img{
+            width: 100%;
+            border-radius: $border-radius-base;
+            transition: all .2s $mdb-animation-curve-fast-out-slow-in;
+
+            @include shadow-8dp();
+
+            &:hover{
+                @include transform-scale(1.02);
+            }
+        }
+    }
+
+    .section-examples{
+        .section-description{
+            text-align: center;
+            margin-bottom: 90px;
+        }
+
+        .card{
+            margin-bottom: 30px;
+            transition: all .2s $mdb-animation-curve-fast-out-slow-in;
+
+            img{
+                border-radius: 4px;
+            }
+            &:hover{
+                @include transform-translate-y(-10px);
+            }
+        }
+        h4.title{
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
+
+    .section-free-demo{
+        .icon-github{
+            font-size: 82px;
+            color: #777777;
+        }
+        h2.title{
+            margin-top: 15px;
+        }
+        .iframe-github{
+            top: 6px;
+            display: inline-block;
+            position: relative;
+            margin-left: 10px;
+        }
+        .card-title,
+        ul li{
+            text-align: left;
+        }
+        ul li b{
+            min-width: 24px;
+            display: inline-block;
+            text-align: center;
+        }
+    }
+
+    .section-overview{
+        .features-5{
+            margin-left: -10px;
+            margin-right: -10px;
+            border-radius: 6px;
+            overflow: hidden;
+
+            .info p{
+                font-size: 16px;
+                line-height: 1.6em;
+            }
+
+            .info .icon > i{
+                font-size: 3.5em;
+            }
+
+            &:after{
+                background: rgba(0, 0, 0, 0.75);
+            }
+
+        }
+    }
+
+    .section-testimonials{
+        padding-top: 50px;
+        padding-bottom: 0;
+
+        h3.title{
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+        .card-title{
+            margin-top: 0px;
+        }
+        .card{
+            .content{
+                padding-top: 0px;
+            }
+        }
+        .card-description{
+            font-size: 16px;
+            line-height: 1.6em;
+        }
+
+        .our-clients{
+            text-align: center;
+            img{
+                width: 100%;
+                max-width: 140px;
+                margin: 0 auto;
+                display: inline-block;
+            }
+        }
+    }
+
+    .section-pricing{
+        z-index: 3;
+        position: relative;
+
+        .nav-pills{
+            display: inline-block;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .card-pricing{
+            margin-top: 45px;
+        }
+        .description{
+            text-align: center;
+        }
+
+        .card-margin{
+            margin-top: 80px;
+        }
+    }
+}
+// style for the landing page
+.landing-page{
+    .header{
+        .share{
+            margin-top: 150px;
+        }
+        .title{
+            color: $white-color;
+        }
+    }
+
+    .wrapper{
+        background: #CCCCCC;
+    }
+    .section-contacts{
+        padding-top: 0;
+    }
+}
+
