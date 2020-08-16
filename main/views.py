@@ -12,10 +12,11 @@ def index(request):
 def home(request):
     schemes = Schemes.objects.all()
     context = {
-        schemes: schemes
+        schemes: schemes[0:5]
     }
     return render(request, 'main/home.html', context)
 
 
 def dashboard(request):
+
     return render(request, 'main/dashboard.html')
