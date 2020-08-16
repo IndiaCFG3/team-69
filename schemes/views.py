@@ -28,7 +28,8 @@ from .models import Schemes
 # Create your views here.
 def searchSchemePage(request):
     template_name = 'main/filter.html'
-    values = { }
+    queryset = Schemes.objects.all()
+    values = { "object_list":queryset }
     return render(request, template_name, values)
 
 def searchResultsView(request):
