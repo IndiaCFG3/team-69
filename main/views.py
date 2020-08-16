@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from schemes.models import Schemes
-# Create your views here.
+from volunteers.models import VolunteerMember
 
 
 def index(request):
@@ -18,5 +18,10 @@ def home(request):
 
 
 def dashboard(request):
-
-    return render(request, 'main/dashboard.html')
+    if(request.user.role == "end_user"):
+        return render(request, 'main/dashboard.html')
+    elif(request.user.role == "volunteer"):
+        volunteer_member = VolunteerMember.objects.filter(
+            volunteer=request.user.volunteer).all()
+        print(volunteer_member)
+        return render(request, 'user/dashboard.html')
