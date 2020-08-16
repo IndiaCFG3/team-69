@@ -20,5 +20,6 @@ from main import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('user.urls')),
-    path('', views.index)
+    path('', include('main.urls')),
+    path('translate/', views.index)
 ]

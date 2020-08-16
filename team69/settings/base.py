@@ -141,7 +141,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 LOGIN_URL = 'login'
 
-# LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'home'
 
 # Django-Crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
