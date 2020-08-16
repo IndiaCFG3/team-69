@@ -9,6 +9,7 @@ class Volunteer(models.Model):
     age = models.PositiveIntegerField(validators=[MaxValueValidator(100)])
     gender = models.CharField(max_length=7)
     location = models.CharField(max_length=120)
+    department = models.CharField(max_length=20, default="")
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="volunteer")
 

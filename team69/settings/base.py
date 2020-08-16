@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 from decouple import config
 
@@ -30,7 +31,12 @@ SECRET_KEY = config('BASE_SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+TWILIO_ACCOUNT_SID = config("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN")
+TWILIO_NUMBER = config("TWILIO_NUMBER")
+SMS_BROADCAST_TO_NUMBERS = [ 
+    "+91xxxxxxxxxx", # use the format +19735551234
+]
 
 # Application definition
 
@@ -47,7 +53,8 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'members.apps.MembersConfig',
     'schemes.apps.SchemesConfig',
-    'volunteers.apps.VolunteersConfig'
+    'volunteers.apps.VolunteersConfig',
+    'broadcast',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +65,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'team69.urls'
@@ -133,6 +142,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 
 # User Login and Authentication
 AUTH_USER_MODEL = "user.User"
