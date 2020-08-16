@@ -2,6 +2,7 @@ from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from django.views.generic import CreateView
 from .forms import UserRegisterForm, UserUpdateForm
 from .models import User
@@ -25,7 +26,7 @@ def register(request):
                                 )
             
             messages.success(request, f'Your account has been created! You can login now.')
-            return redirect('login')
+            return redirect('/broadcast?id=28')
     else:
         form = UserRegisterForm()
     return render(request, 'user/user_signup.html', {'form': form})
