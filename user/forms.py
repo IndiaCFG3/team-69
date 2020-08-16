@@ -6,6 +6,9 @@ from .models import User
 
 class UserRegisterForm(UserCreationForm):
 	email 		= forms.EmailField(help_text='Email Id used for registration cannot be changed later.')
+	# name 		= forms.CharField(max_length=20)
+	# age 		= forms.PositiveIntegerField()
+	# dob			= forms.
 
 	class Meta(UserCreationForm.Meta):
 		model 	= User
@@ -24,3 +27,15 @@ class UserUpdateForm(forms.ModelForm):
 	class Meta:
 		model 	= User
 		fields 	= ['contact']
+
+
+		# class Member(models.Model):
+  #   name = models.CharField(max_length=20)
+  #   age = models.IntegerField()
+  #   dob = models.DateField()
+  #   income = models.IntegerField()
+  #   family_size = models.IntegerField()
+  #   gender = models.CharField(max_length=7)
+  #   location = models.CharField(max_length=120)
+  #   user = models.ForeignKey(
+  #       User, on_delete=models.CASCADE, related_name="member")
