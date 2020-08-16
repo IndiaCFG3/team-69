@@ -16,6 +16,10 @@ def contact(request):
     return render(request, 'main/contact.html', context)
 
 
+def user_view(request):
+    return render(request, 'main/user_view.html')
+
+
 def home(request):
     schemes = Schemes.objects.all()
     context = {
