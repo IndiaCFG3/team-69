@@ -5,14 +5,17 @@ from django.db import transaction
 from .models import User
 
 class UserRegisterForm(UserCreationForm):
-	email 		= forms.EmailField(help_text='Email Id used for registration cannot be changed later.')
-	# name 		= forms.CharField(max_length=20)
-	# age 		= forms.PositiveIntegerField()
-	# dob			= forms.
+	email 		= forms.EmailField()
+	name 		= forms.CharField(max_length=20)
+	age 		= forms.IntegerField(min_value=0)
+	dob			= forms.DateField()
+	income		= forms.IntegerField(min_value=0)
+	family_size = forms.IntegerField(min_value=1)
+	location 	= forms.CharField(max_length=120)
 
 	class Meta(UserCreationForm.Meta):
 		model 	= User
-		fields 	= ['email', 'contact', 'password1', 'password2']
+		fields 	= ['name', 'email', 'age', 'dob', 'income', 'family_size', 'location', 'contact', 'password1', 'password2']
 	
 	@transaction.atomic
 	def clean(self):
@@ -27,15 +30,3 @@ class UserUpdateForm(forms.ModelForm):
 	class Meta:
 		model 	= User
 		fields 	= ['contact']
-
-
-		# class Member(models.Model):
-  #   name = models.CharField(max_length=20)
-  #   age = models.IntegerField()
-  #   dob = models.DateField()
-  #   income = models.IntegerField()
-  #   family_size = models.IntegerField()
-  #   gender = models.CharField(max_length=7)
-  #   location = models.CharField(max_length=120)
-  #   user = models.ForeignKey(
-  #       User, on_delete=models.CASCADE, related_name="member")

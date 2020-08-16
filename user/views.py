@@ -5,15 +5,25 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView
 from .forms import UserRegisterForm, UserUpdateForm
 from .models import User
-
+from members.models import Member
 
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            user = form
+            user = form.save()
+            user.role = "end_user"
             user.email = form.cleaned_data.get('email')
             user.save()
+            Member.objects.create(  user = user, 
+                                    age  = form.cleaned_data.get('age'),
+                                    name = form.cleaned_data.get('name'),
+                                    dob  = form.cleaned_data.get('dob'),
+                                    income = form.cleaned_data.get('income'),
+                                    family_size = form.cleaned_data.get('family_size'),
+                                    location = form.cleaned_data.get('location'),
+                                )
+            
             messages.success(request, f'Your account has been created! You can login now.')
             return redirect('login')
     else:
