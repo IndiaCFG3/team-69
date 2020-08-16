@@ -1,3 +1,10 @@
+Team*.zip
+*.pem
+*.ppk
+*.crt
+*.key
+*.ovpn
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
