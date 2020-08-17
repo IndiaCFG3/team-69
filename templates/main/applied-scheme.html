@@ -58,41 +58,54 @@
     	</div>
     </nav>
 
-	<div class="page-header header-filter" data-parallax="active" style="background-image: url('../img/bg10.jpg');">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<h1 class="title">Applied Schemes!</h1>
-					<br />
-				</div>
-			</div>
-		</div>
-	</div>
+	<div class="wrapper">
+        <div class="page-header header-filter header-small"
+            style="background-image: url('https://images.unsplash.com/photo-1423655156442-ccc11daa4e99?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h1 class="title text-center">Applied Schemes</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 	{% if scheme %}
-		{% for sc in scheme %}
 		<div class="main main-raised">
 			<div class="container">
 				<div class="section section-text">
 					<div class="row">
-						<div class="col-md-8 col-md-offset-2">
-	                        <h3 class="title text-center">Users</h3>
-	                        <div class="card" style="width: 20rem;">
-	                            <div class="card-body">
-	                              <h4 class="card-title">Scheme Name: {{sc.name}}</h4>
-	                              <h6 class="card-subtitle mb-2 text-muted"></h6>
-	                              <p class="card-text">Income: {{sc.income}}</p>
-	                              <p class="card-text">Age-Group: {{sc.age}}</p>
-	                              <p class="card-text">Gender: {{sc.gender}}</p>
-	                              <p class="card-text">Scheme-URL: <a href="{{ sc.scheme.url}}" class="card-link">{{sc.scheme_url}}</a></p>
-	                            </div>
-	                          </div>
-						</div>
+						{% for sc in scheme %}
+						<div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5>Scheme Name: {{sc.name}}</h5>
+									<h6 class="card-subtitle mb-2 text-muted"></h6>
+									<p class="card-text">Income: {{sc.income}}</p>
+									<p class="card-text">Age-Group: {{sc.age}}</p>
+									<p class="card-text">Gender: {{sc.gender}}</p>
+									<p class="card-text"><a href="{{ sc.scheme.url}}" class="card-link">Scheme Details</a></p>
+
+                                </div>
+                            </div>
+                        </div>
+						{% endfor %}
+
 					</div>
 				</div>
 			</div>
 		</div>
-		{% endfor %}
+		{% else %}
+		<div class="main main-raised">
+			<div class="container">
+				<div class="section section-text">
+					<div class="row"> 
+						<h2 class="text-center">No Schemes !</h2>
+						<br><br><br>
+					</div>
+				</div>
+			</div>
+		</div>
 	{% endif %}
 	<footer class="footer">
 		<div class="container">
