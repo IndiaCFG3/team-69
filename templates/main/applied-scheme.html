@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/apple-icon.png' %}">
-	<link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+	<link rel="icon" type="image/png" href="{% static 'img/favicon.jpg' %}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title>Applied Schemes</title>
@@ -18,6 +18,8 @@
 	<!-- CSS Files -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="{% static 'css/material-kit.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/material-kit.css' %}" rel="stylesheet" />
 </head>
 
 <body class="blog-post">
@@ -32,7 +34,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
         		</button>
-        		<a class="navbar-brand" href="../presentation.html">Panah Foundation</a>
+        		<a class="navbar-brand" href="{% url 'home' %}">Panah Foundation</a>
 				<div id="google_translate_element"></div>
         	</div>
         	<div class="collapse navbar-collapse" id="navigation-example">
@@ -56,7 +58,7 @@
     	</div>
     </nav>
 
-	<div class="page-header header-filter" data-parallax="active" style="background-image: url('../img/bg5.jpg');">
+	<div class="page-header header-filter" data-parallax="active" style="background-image: url('../img/bg10.jpg');">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
@@ -82,7 +84,7 @@
 	                              <p class="card-text">Income: {{sc.income}}</p>
 	                              <p class="card-text">Age-Group: {{sc.age}}</p>
 	                              <p class="card-text">Gender: {{sc.gender}}</p>
-	                              <p class="card-text">Scheme-URL: <a href="javascript:;" class="card-link">{{sc.scheme_url}}</a></p>
+	                              <p class="card-text">Scheme-URL: <a href="{{ sc.scheme.url}}" class="card-link">{{sc.scheme_url}}</a></p>
 	                            </div>
 	                          </div>
 						</div>

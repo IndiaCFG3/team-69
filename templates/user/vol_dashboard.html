@@ -101,6 +101,7 @@
 									<p>Family Size : {{ x.family_size }}</p>
 									<p>Location : {{ x.location }}</p>
 									<p>Schemes : {{ x.schemes }}</p>
+									<a href="{% url 'doc-verify' x.id %}"> Verify Documents</a>
 								</div>
 							</div>
 						</div>

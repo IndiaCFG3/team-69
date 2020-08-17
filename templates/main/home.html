@@ -94,9 +94,14 @@
                         </div>
                         <!--  Add tht schemes here -->
                         {% for scheme in schemes %}
-                        <div class="col-md-4">
-                            <h4 class="info-title">{{ scheme.name }}</h4>
-                            <p>{{ scheme.scheme_url }}</p>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5>{{ scheme.name }}</h5>
+                                    <a href="{{ scheme.scheme_url }}">See more details here </a>
+                                    
+                                </div>
+                            </div>
                         </div>
                         {% endfor %}
                     </div>
