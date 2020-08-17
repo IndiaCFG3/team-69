@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'schemes.apps.SchemesConfig',
     'volunteers.apps.VolunteersConfig',
     'broadcast',
+    'import_export',
 ]
 
 MIDDLEWARE = [
